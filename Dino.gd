@@ -24,7 +24,6 @@ func _physics_process(delta):
 	for child in GL.get_children():
 		if child is Area2D:
 			cacto = child.get_position().x
-			print(cacto)
 	if not alive:
 		return
 	velocidade = move_and_slide(velocidade, Vector2.UP)
@@ -46,7 +45,7 @@ func _physics_process(delta):
 			pulou = true
 			main_node.pontos = main_node.pontos + main_node.pontuacao_cacto
 			main_node.get_node("Pontos").text = "Pontos: " + str(main_node.pontos)
-	
+	print(cacto)
 func die():
 	$AnimationPlayer.play("morto")
 	alive = false

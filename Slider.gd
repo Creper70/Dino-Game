@@ -7,7 +7,7 @@ var ground_width = 2400
 var dist = 0.0
 var rng = RandomNumberGenerator.new()
 var capeta = 10000
-var my_random_number = 1.5
+var my_random_number
 
 
 var cactos = [preload("res://CactoP1.tscn"),
@@ -29,7 +29,6 @@ func _physics_process(delta):
 					c.global_position.x += ground_width * 2
 				else:
 					c.queue_free()
-					
 
 	
 func _ready():
@@ -46,4 +45,3 @@ func add_obstacle():
 
 func _on_ObstSpawnTimer_timeout():
 	add_obstacle()
-	$ObstSpawnTimer.set_wait_time(my_random_number)
